@@ -4,25 +4,30 @@ let makeTask = document.getElementById("makeTask");
 let addBtn = document.getElementById("addBtn");
 let taskShow = document.getElementById("taskShow");
 
+let deleteBtn = document.querySelectorAll("deleteBtn")
+
+
+let taskList = [];
+
 function CreateTask() {
     let taskName = makeTask.value;
-    let taskList = [];
     let task = document.createElement("div");
     task.classList.add("task");
-    task.innerHTML = `
-  
+    task.innerHTML = `  
         <form action="">
             <input type="checkbox">                                           
         </form>
         <p>${taskName}</p>    
-        <button class="deleteBtn" id="delete"><i class="fa-solid fa-trash"></i></button>
-  
+        <button class="deleteBtn" id="delete"><i class="fa-solid fa-trash"></i></button>  
     `;
-    taskShow.appendChild(task);
-    taskList.push(taskShow);
+    taskList.push(taskShow.appendChild(task));
     console.log(taskList);
 
-    return task;
+    // deleteBtn.addEventListener("click", () => {
+    //     taskList.slice(0)
+    //     console.log(taskIndex);
+        
+    //   })
+
 }
 
-const AddMyTaskNum = () => {};
